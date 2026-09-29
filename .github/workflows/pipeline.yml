@@ -218,11 +218,8 @@ jobs:
           JF_PASSWORD: ${{ env.JF_PASSWORD }}
  
       - name: Upload JAR to Artifactory
-<<<<<<< HEAD
         run: jf rt upload "target/*.jar" ${{ env.JFROG_REPO }}/        
-=======
-        run: jf rt upload "target/*.jar" ${{ env.JFROG_REPO }}/ 
-        
+
 
   docker-build-push:
     name: Build and Push to ECR
@@ -261,5 +258,4 @@ jobs:
             $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG \
             $ECR_REGISTRY/$ECR_REPOSITORY:latest
           docker push \
-            $ECR_REGISTRY/$ECR_REPOSITORY:latest      
->>>>>>> aca0a3b (Build image and Push to AWS ECR)
+            $ECR_REGISTRY/$ECR_REPOSITORY:latest
